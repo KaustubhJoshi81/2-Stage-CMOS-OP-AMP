@@ -7,7 +7,8 @@ Schematic:
 <img width="1391" height="867" alt="image" src="https://github.com/user-attachments/assets/6d4a06c4-6d65-4b90-bc49-81ca342fd520" />
 
 Layout:
-<img width="1177" height="1067" alt="image" src="https://github.com/user-attachments/assets/92a9f24d-e252-44e4-8768-1bdf4bd6f6c2" />
+<img width="1066" height="1078" alt="image" src="https://github.com/user-attachments/assets/bf4064fd-98ff-4e27-a1c5-dae331cedd2f" />
+
 
 Testbench Results:
 Vin vs Vout
