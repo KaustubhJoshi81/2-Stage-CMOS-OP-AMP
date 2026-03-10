@@ -12,8 +12,6 @@ Layout:
 Testbench Results:
 Vin vs Vout
 <img width="1356" height="841" alt="image" src="https://github.com/user-attachments/assets/da980c31-8bea-401f-af6b-062d48c497dd" />
-
-
-<img width="1704" height="1069" alt="Screenshot 2026-03-07 115706" src="https://github.com/user-attachments/assets/07d7cf86-4e50-4a17-b8da-2655ea1d5a4b" />
+<img width="1547" height="1155" alt="image" src="https://github.com/user-attachments/assets/60631c69-890f-464b-bdfb-174ebfb08fb6" />
 
 
