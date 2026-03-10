@@ -61,14 +61,12 @@ N 820 -50 820 -40 {lab=VSS2}
 N 190 -70 190 -60 {lab=VSS}
 N 1220 -550 1220 -520 {lab=GND}
 N 1220 -630 1220 -610 {lab=VDD}
-N 1240 -270 1240 -240 {lab=Vin+}
-N 1240 -180 1240 -160 {lab=GND}
+N 1180 -260 1180 -230 {lab=Vin+}
+N 1180 -170 1180 -150 {lab=GND}
 N 1210 -360 1210 -330 {lab=GND}
 N 1210 -440 1210 -420 {lab=VSS}
 N 1070 -260 1070 -230 {lab=Vin-}
 N 1070 -170 1070 -150 {lab=GND}
-N 520 -230 560 -230 {lab=GND}
-N 520 -230 520 -210 {lab=GND}
 N 820 -230 840 -230 {lab=Vout}
 N 1020 -550 1020 -520 {lab=GND}
 N 1020 -630 1020 -610 {lab=VDD1}
@@ -81,8 +79,8 @@ N 1040 -440 1040 -420 {lab=VSS2}
 N 600 -310 600 -290 {lab=Vd1}
 N 470 -170 490 -170 {lab=Vs1}
 N 710 -120 710 -90 {lab=Vo1}
-N 450 -230 480 -230 {lab=GND}
-N 480 -230 480 -210 {lab=GND}
+N 450 -230 480 -230 {lab=Vin-}
+N 480 -230 480 -210 {lab=Vin-}
 N 640 -200 640 -180 {lab=Vo1}
 N 600 -230 640 -230 {lab=Vd1}
 N 640 -270 640 -230 {lab=Vd1}
@@ -96,6 +94,8 @@ N 150 -200 190 -200 {lab=#net1}
 N 190 -140 230 -140 {lab=VSS}
 N 230 -140 230 -90 {lab=VSS}
 N 190 -90 230 -90 {lab=VSS}
+N 540 -230 560 -230 {lab=Vin+}
+N 540 -250 540 -230 {lab=Vin+}
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 210 -370 0 1 {name=M2
 W=37.4
 L=2
@@ -183,18 +183,17 @@ spiceprefix=X
 C {vsource.sym} 1220 -580 0 0 {name=VDD value=5 savecurrent=false}
 C {gnd.sym} 1220 -520 0 0 {name=l7 lab=GND}
 C {lab_pin.sym} 1220 -630 0 0 {name=p9 sig_type=std_logic lab=VDD}
-C {vsource.sym} 1240 -210 0 0 {name=Vin+ value="sin(0.51 0.005 100)" savecurrent=false}
-C {gnd.sym} 1240 -160 0 0 {name=l4 lab=GND}
-C {lab_pin.sym} 1240 -270 0 0 {name=p10 sig_type=std_logic lab=Vin+}
+C {vsource.sym} 1180 -200 0 0 {name=Vin1 value=0 savecurrent=false}
+C {gnd.sym} 1180 -150 0 0 {name=l4 lab=GND}
+C {lab_pin.sym} 1180 -260 0 0 {name=p10 sig_type=std_logic lab=Vin+}
 C {vsource.sym} 1210 -390 0 0 {name=VSS value=3.5 savecurrent=false}
 C {gnd.sym} 1210 -330 0 0 {name=l2 lab=GND}
 C {lab_pin.sym} 1210 -440 0 0 {name=p2 sig_type=std_logic lab=VSS}
 C {lab_pin.sym} 190 -450 0 0 {name=p1 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} 190 -60 0 0 {name=p3 sig_type=std_logic lab=VSS}
-C {vsource.sym} 1070 -200 0 0 {name=Vin- value=0 savecurrent=false}
+C {vsource.sym} 1070 -200 0 0 {name=Vin2 value=0 savecurrent=false}
 C {gnd.sym} 1070 -150 0 0 {name=l1 lab=GND}
 C {lab_pin.sym} 1070 -260 0 0 {name=p6 sig_type=std_logic lab=Vin-}
-C {gnd.sym} 520 -210 0 0 {name=l3 lab=GND}
 C {lab_pin.sym} 840 -230 0 1 {name=p4 sig_type=std_logic lab=Vout}
 C {vsource.sym} 1020 -580 0 0 {name=VDD1 value=5 savecurrent=false}
 C {gnd.sym} 1020 -520 0 0 {name=l5 lab=GND}
@@ -212,8 +211,8 @@ C {gnd.sym} 1040 -330 0 0 {name=l9 lab=GND}
 C {lab_pin.sym} 1040 -440 0 0 {name=p14 sig_type=std_logic lab=VSS2}
 C {lab_pin.sym} 510 -10 0 0 {name=p15 sig_type=std_logic lab=VSS1}
 C {lab_pin.sym} 820 -40 0 0 {name=p16 sig_type=std_logic lab=VSS2}
-C {code_shown.sym} 390 -660 0 0 {name=s1 only_toplevel=false value="
-.op
+C {code_shown.sym} 310 -630 0 0 {name=s1 only_toplevel=false value="
+.dc Vin1 -5 5 100u
 .saveall
 .end"}
 C {devices/code.sym} 530 -680 0 0 {name=TT_MODELS
@@ -228,7 +227,6 @@ C {sky130_fd_pr/cap_mim_m3_1.sym} 730 -200 1 0 {name=C1 model=cap_mim_m3_1 W=1 L
 C {lab_pin.sym} 490 -170 0 1 {name=p18 sig_type=std_logic lab=Vs1}
 C {lab_pin.sym} 710 -90 0 1 {name=p19 sig_type=std_logic lab=Vo1}
 C {lab_pin.sym} 600 -310 0 1 {name=p20 sig_type=std_logic lab=Vd1}
-C {gnd.sym} 480 -210 0 0 {name=l10 lab=GND}
 C {sky130_fd_pr/pfet_g5v0d10v5.sym} 580 -230 0 0 {name=M1
 W=10
 L=5
@@ -271,3 +269,5 @@ sa=0 sb=0 sd=0
 model=nfet_05v0_nvt
 spiceprefix=X
 }
+C {lab_pin.sym} 540 -250 0 0 {name=p5 sig_type=std_logic lab=Vin+}
+C {lab_pin.sym} 480 -210 0 1 {name=p17 sig_type=std_logic lab=Vin-}
