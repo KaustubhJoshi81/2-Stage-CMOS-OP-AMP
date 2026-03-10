@@ -1,6 +1,8 @@
 # 2-Stage-CMOS-OP-AMP
 Designed schematic and layout of 2-stage OP-AMP using open source tools like Xschem, Magic VLSI, ngspice and Skywater 130 PDK.
-Also carried out few testbench simulations and got following results: DC offset voltage = -0.49V, Large signal gain ~ 2334V/V
+Also carried out few testbench simulations and got following results: DC offset voltage = -0.49V, Large signal gain ~ 2334V/V.
+
+
 Currently working on testbench to test several other parameters.
 
 Schematic:
